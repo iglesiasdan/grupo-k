@@ -1,0 +1,7 @@
+[16-Dec-2016 04:58:07 UTC] PHP Fatal error:  Call to a member function mostrar() on a non-object in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 33
+[19-Dec-2016 17:44:40 UTC] PHP Fatal error:  Class 'Personaj' not found in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 30
+[19-Dec-2016 17:46:04 UTC] PHP Fatal error:  Call to undefined method CI_Loader::mostrar() in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 34
+[19-Dec-2016 17:46:31 UTC] PHP Fatal error:  Call to undefined method CI_Loader::mostrar() in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 34
+[19-Dec-2016 17:49:03 UTC] PHP Fatal error:  Call to undefined method CI_Loader::mostrar() in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 35
+[19-Dec-2016 18:08:13 UTC] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE), expecting ';' or '{' in /home/danielig/grupok.daniel-iglesias.com.ve/application/models/Carpeta_model.php on line 46
+[19-Dec-2016 19:32:51 UTC] PHP Fatal error:  Call to a member function mostrar() on a non-object in /home/danielig/grupok.daniel-iglesias.com.ve/application/controllers/Carpeta.php on line 63
