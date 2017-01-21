@@ -29,7 +29,7 @@ class Carpeta extends CI_Controller {
 
 	public function index() {
 		// $personaj = new Personaj();
-		//var_dump($_REQUEST['var1']);
+		var_dump($_REQUEST['var1']);
 		$variable['vista'] =  $_REQUEST['var1'];
 		//$variable['vista'] = $personaj->mostrar();
 		$numero = explode("'",$variable['vista']);
@@ -43,10 +43,10 @@ class Carpeta extends CI_Controller {
 	public function mostrarr($id){
 
 		if ($id) {
-			echo $id;
+			// echo $id;
 			$buscar =(integer)$id;
 			$datos = $this->Personaj_model->mostrar($buscar);
-			var_dump($datos);
+			// var_dump($datos);
 			// echo json_encode($datos);
 
 		}
