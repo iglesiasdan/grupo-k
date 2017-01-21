@@ -33,7 +33,7 @@ class Carpeta extends CI_Controller {
 		$variable['vista'] =  $_REQUEST['var1'];
 		//$variable['vista'] = $personaj->mostrar();
 		$numero = explode("'",$variable['vista']);
-		$this->mostrarr($numero[1]);
+		$this->mostrar_carpeta($numero[1]);
 		$this->load->view('carpeta/carpeta',$variable);
 
 
@@ -56,11 +56,11 @@ class Carpeta extends CI_Controller {
 		}
 	}
 
-	public function mostrar_carpeta(){
+	public function mostrar_carpeta($id){
 		// echo "hola";
 		if ($this->input->is_ajax_request()) {
 			$buscar = $this->input->post("buscar");
-			$datos = $this->Carpeta_model->mostrar($buscar);
+			$datos = $this->Carpeta_model->mostrar($buscar,$id);
 			echo json_encode($datos);
 
 		}
