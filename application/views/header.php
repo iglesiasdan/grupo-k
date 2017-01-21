@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Grupo K</title>
+	<title>Grupo Kk</title>
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="">
@@ -49,7 +49,7 @@
 								<li><a href="<?= base_url('register') ?>">Register</a></li>
 							<?php endif; ?>
 						<?php else : ?>
-							
+
 							<li><a href="<?= base_url('login') ?>">Login</a></li>
 						<?php endif; ?>
 					</ul>
@@ -59,7 +59,7 @@
 	</header><!-- #site-header -->
 
 	<main id="site-content" role="main">
-		
+
 		<?php if (isset($_SESSION)) : ?>
 			<div class="container">
 				<div class="row">
@@ -69,4 +69,3 @@
 				</div><!-- .row -->
 			</div><!-- .container -->
 		<?php endif; ?>
-		
