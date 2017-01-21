@@ -1,14 +1,14 @@
 $(document).on("ready",inicio);
 
 function inicio(){
-	alert($("#id_enti").val())
-	mostrarDatos("");
+	var id_enti=$("#id_enti").val();
+	mostrarDatos("",id_enti);
 	$("#buscar").keyup(function(){
 		buscar = $("#buscar").val();
-		mostrarDatos(buscar);
+		mostrarDatos(buscar,id_enti);
 	});
 	$("#btnbuscar").click(function(){
-		mostrarDatos("");
+		mostrarDatos("",id_enti);
 		$("#buscar").val("");
 	});
 	$("#btnactualizar").click(actualizar);
@@ -22,7 +22,7 @@ function inicio(){
 			data:$("form").serialize(),
 			success:function(respuesta){
 				alert(respuesta);
-				mostrarDatos("");
+				mostrarDatos("",id_enti);
 				$("#nombre").val("");
 				$("#ubicacion").val("");
 			}
@@ -59,11 +59,11 @@ function inicio(){
 	});
 }
 
-function mostrarDatos(valor){
+function mostrarDatos(valor,id){
 	$.ajax({
 		url:"http://grupok.daniel-iglesias.com.ve/carpeta/mostrar_carpeta",
 		type:"POST",
-		data:{buscar:valor,},
+		data:{buscar:valor,id:id},
 		success:function(respuesta){
 			//alert(respuesta);
 			//console.log("hola");
@@ -88,7 +88,7 @@ function actualizar(){
 		data:$("#form-actualizar").serialize(),
 		success:function(respuesta){
 			alert(respuesta);
-			mostrarDatos("");
+			mostrarDatos("",id_enti);
 			$("#nombresele").val("");
 			$("#ubicacionsele").val("");
 		}
@@ -102,7 +102,7 @@ function eliminar(idsele){
 		data:{id:idsele},
 		success:function(respuesta){
 			alert(respuesta);
-			mostrarDatos("");
+			mostrarDatos("",id_enti);
 			$("#nombresele").val("");
 			$("#ubicacionsele").val("");
 		}
