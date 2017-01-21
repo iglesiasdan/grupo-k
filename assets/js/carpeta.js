@@ -1,6 +1,7 @@
 $(document).on("ready",inicio);
 
 function inicio(){
+	alert($("#id_enti").val())
 	mostrarDatos("");
 	$("#buscar").keyup(function(){
 		buscar = $("#buscar").val();
@@ -62,7 +63,7 @@ function mostrarDatos(valor){
 	$.ajax({
 		url:"http://grupok.daniel-iglesias.com.ve/carpeta/mostrar_carpeta",
 		type:"POST",
-		data:{buscar:valor},
+		data:{buscar:valor,},
 		success:function(respuesta){
 			//alert(respuesta);
 			//console.log("hola");
