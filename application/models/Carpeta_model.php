@@ -45,8 +45,8 @@ class Carpeta_model extends CI_Model {
 function mostrar($valor,$id){
 		$this->db->select('*');
 		$this->db->from('Carpeta a');
-		$this->db->join('Entidad b','b.id_entidad=a.id_entidad','left')
-		$this->db->where('b.id_entidad',$id)
+		$this->db->join('Entidad b','b.id_entidad=a.id_entidad','left');
+		$this->db->where('b.id_entidad',$id);
 		$this->db->like("nombre_carpeta",$valor);
 		$consulta = $this->db->get();
 		return $consulta->result();
