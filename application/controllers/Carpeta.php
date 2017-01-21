@@ -39,24 +39,9 @@ class Carpeta extends CI_Controller {
 
 	}
 
-	// funcion para mostrar la persona juridica a la que pertenece la carpeta
-	public function mostrarr($id){
 
-		if ($id) {
-			// echo $id;
-			$buscar =(integer)$id;
-			$datos = $this->Personaj_model->mostrar($buscar);
-			// var_dump($datos);
-			// echo json_encode($datos);
 
-		}
-		else
-		{
-			show_404();
-		}
-	}
-
-	public function mostrar_carpeta($id){
+public function mostrar_carpeta($id){
 		// echo "hola";
 		if ($this->input->is_ajax_request()) {
 			$buscar = $this->input->post("buscar");
