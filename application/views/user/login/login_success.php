@@ -3,7 +3,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<a href="">Login Success lo lograste marico</a>
+				<a href="">Login Success</a>
 			</div>
 		</div>
 	</div><!-- .row -->
