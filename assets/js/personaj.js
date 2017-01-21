@@ -31,7 +31,7 @@ function inicio(){
 	$("body").on("click","#listaPersonaJ tr",function(event){
 	//$(".clickable").click(function() {
         variable = $(this).data("href");
-				alert(variable);
+				console.log(variable);
   //       $.ajax({
 		// 	url:"http://localhost:8888/grupo-k/carpeta",
 		// 	type:"POST",
