@@ -46,7 +46,8 @@ public function mostrar_carpeta(){
 		if ($this->input->is_ajax_request()) {
 			$buscar = $this->input->post("buscar");
 			$id = $this->input->post("id");
-			$datos = $this->Carpeta_model->mostrar($buscar,$id);
+			$numero = explode("'",$id);
+			$datos = $this->Carpeta_model->mostrar($buscar,$numero[1]);
 			echo json_encode($datos);
 
 		}
