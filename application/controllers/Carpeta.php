@@ -41,7 +41,7 @@ class Carpeta extends CI_Controller {
 
 
 
-public function mostrar_carpeta($id){
+public function mostrar_carpeta(){
 		// echo "hola";
 		if ($this->input->is_ajax_request()) {
 			$buscar = $this->input->post("buscar");

@@ -16,11 +16,8 @@
 			        	<div class="col-lg-4"></div>
 			            <div class="col-lg-4 text-center">
 			            	<div id="titulo"></div>
-			            	<?php
-											//var_dump ($_REQUEST);
-											echo $vista;
-
-			            	?>
+			            	
+										<input id="id_enti" type="text" hidden="true" value="<?php echo $vista; ?>"/>
 							<form id="form-create-carpetaj" class="form-horizontal" role="form" action="<?php base_url();?>carpeta/guardar" method="POST">
 		            			<div class="form-group">
 		            				<input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingrese su Nombre"/>
