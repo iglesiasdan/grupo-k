@@ -5,7 +5,7 @@
 
 		<section class="contenido">
 			<div class="row">
-				<button type="button" id="btnback" class="btn btn-block">Volver</button>
+				<button type="button" id="btnback" class="btn btn-primary">Volver</button>
 				<ul class="nav nav-tabs">
 			        <li class="active"><a href="#tab1" data-toggle="tab">Registrar</a></li>
 			        <li><a id="tab-consultar" href="#tab2" data-toggle="tab">Consultar</a></li>
