@@ -12,6 +12,7 @@ function inicio(){
 		$("#buscar").val("");
 	});
 	$("#btnactualizar").click(actualizar);
+	
 	$("#form-create-carpetaj").submit(function (event){
 
 		event.preventDefault();
@@ -47,11 +48,9 @@ function inicio(){
 		event.preventDefault();
 		idsele = $(this).attr("href");
 		nombressele = $(this).parent().parent().children("td:eq(1)").text();
-		apellidossele = $(this).parent().parent().children("td:eq(2)").text();
 
 		$("#idsele").val(idsele);
 		$("#nombresele").val(nombressele);
-		$("#ubicacionsele").val(apellidossele);
 	});
 	$("body").on("click","#listacarpetaj button",function(event){
 		idsele = $(this).attr("value");
@@ -90,7 +89,7 @@ function actualizar(){
 			alert(respuesta);
 			mostrarDatos("",id_enti);
 			$("#nombresele").val("");
-			$("#ubicacionsele").val("");
+			// $("#ubicacionsele").val("");
 		}
 	});
 }

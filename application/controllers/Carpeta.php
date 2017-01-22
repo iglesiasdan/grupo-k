@@ -34,6 +34,7 @@ class Carpeta extends CI_Controller {
 		//$variable['vista'] = $personaj->mostrar();
 		//$numero = explode("'",$variable['vista']);
 		//$this->mostrar_carpeta($numero[1]);
+		base_url('carpeta');
 		$this->load->view('carpeta/carpeta',$variable);
 
 
@@ -83,20 +84,19 @@ function guardar(){
 
 function actualizar(){
 	if ($this->input->is_ajax_request()) {
-		$idsele = $this->input->post("idsele");
-		$nombres = $this->input->post("nombresele");
-		$datos = array(
-			"nombre_carpeta" => strtoupper($nombres)
+			$idsele = $this->input->post("idsele");
+			$nombres = $this->input->post("nombresele");
+			$datos = array(
+				"nombre_carpeta" => strtoupper($nombres)
 			);
-		if($this->Carpeta_model->actualizar($idsele,$datos) == true)
-			echo "Registro Actualizado";
-		else
-			echo "No se pudo actualizar los datos";
-
+			if($this->Carpeta_model->actualizar($idsele,$datos) == true)
+					echo "Registro Actualizado";
+			else
+					echo "No se pudo actualizar los datos";
 	}
 	else
 	{
-		show_404();
+			show_404();
 	}
 }
 
