@@ -5,7 +5,9 @@
 
 		<section class="contenido">
 			<div class="row">
-				<button type="button" id="btnback" class="btn btn-primary">Volver</button>
+				<p>
+						<button type="button" id="btnback" class="btn btn-primary">Volver</button>
+				</p>
 				<ul class="nav nav-tabs">
 			        <li class="active"><a href="#tab1" data-toggle="tab">Registrar</a></li>
 			        <li><a id="tab-consultar" href="#tab2" data-toggle="tab">Consultar</a></li>
@@ -58,10 +60,6 @@
 								  				<label>Nombre:</label>
 								  				<input type="hidden" id="idsele" name="idsele" value="">
 								  				<input type="text" name="nombresele" id="nombresele" class="form-control">
-								  			</div>
-								  			<div class="form-group">
-								  				<label>Ubicacion:</label>
-								  				<input type="text" name="ubicacionsele" id="ubicacionsele" class="form-control">
 								  			</div>
 								  			<div class="form-group">
 								  				<button type="button" id="btnactualizar" class="btn btn-success btn-block">Guardar</button>
