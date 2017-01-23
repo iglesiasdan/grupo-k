@@ -20,6 +20,7 @@ class Personaj extends CI_Controller {
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('Personaj_model');
+		$this->load->model('Carpeta_model');
 		$this->load->model('user_model');
 
 	}
