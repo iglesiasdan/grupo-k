@@ -3,43 +3,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
  * Persona Juridica class.
- * 
+ *
  * @extends CI_Controller
  */
 class Personaj extends CI_Controller {
 
 	/**
 	 * __construct function.
-	 * 
+	 *
 	 * @access public
 	 * @return void
 	 */
 	public function __construct() {
-		
+
 		parent::__construct();
 		$this->load->library(array('session'));
 		$this->load->helper(array('url'));
 		$this->load->model('Personaj_model');
 		$this->load->model('user_model');
-		
+
 	}
-	
-	
+
+
 	public function index() {
-		
+
 		$data['menu'] = $this->load->view('carpeta/carpeta', NULL, TRUE);
 
 
 		$this->load->view('personaj/header');
 		$this->load->view('personaj/personaj', $data);
 		$this->load->view('footer');
-		
+
 	}
 
 
 	function guardar(){
 		//El metodo is_ajax_request() de la libreria input permite verificar
-		//si se esta accediendo mediante el metodo AJAX 
+		//si se esta accediendo mediante el metodo AJAX
 		if ($this->input->is_ajax_request()) {
 			$nombres = $this->input->post("nombre");
 			$apellidos = $this->input->post("ubicacion");
@@ -67,7 +67,7 @@ class Personaj extends CI_Controller {
 			$buscar = $this->input->post("buscar");
 			$datos = $this->Personaj_model->mostrar($buscar);
 			echo json_encode($datos);
-			
+
 		}
 		else
 		{
@@ -88,11 +88,30 @@ class Personaj extends CI_Controller {
 				echo "Registro Actualizado";
 			else
 				echo "No se pudo actualizar los datos";
-			
+
 		}
 		else
 		{
 			show_404();
+		}
+	}
+
+
+	function actualizarr(){
+		if ($this->input->is_ajax_request()) {
+				$idsele = $this->input->post("idsele");
+				$nombres = $this->input->post("nombresele");
+				$datos = array(
+					"nombre_carpeta" => strtoupper($nombres)
+				);
+				if($this->Carpeta_model->actualizar($idsele,$datos) == true)
+						echo "Registro Actualizado";
+				else
+						echo "No se pudo actualizar los datos";
+		}
+		else
+		{
+				show_404();
 		}
 	}
 
@@ -104,7 +123,7 @@ class Personaj extends CI_Controller {
 				echo "Registro Eliminado";
 			else
 				echo "No se pudo eliminar los datos";
-			
+
 		}
 		else
 		{

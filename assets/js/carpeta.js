@@ -12,7 +12,7 @@ function inicio(){
 		$("#buscar").val("");
 	});
 	$("#btnactualizar").click(actualizar);
-	
+
 	$("#form-create-carpetaj").submit(function (event){
 
 		event.preventDefault();
@@ -82,7 +82,7 @@ function mostrarDatos(valor,id){
 
 function actualizar(){
 	$.ajax({
-		url:"http://grupok.daniel-iglesias.com.ve/carpeta/actualizar",
+		url:"http://grupok.daniel-iglesias.com.ve/personaj/actualizarr",
 		type:"POST",
 		data:$("#form-actualizar").serialize(),
 		success:function(respuesta){
