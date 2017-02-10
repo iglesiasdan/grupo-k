@@ -29,20 +29,10 @@ function inicio(){
 	});
 
 	$("body").on("click","#listaPersonaJ tr",function(event){
-	//$(".clickable").click(function() {
         variable = $(this).data("href");
-				console.log(variable);
-  //       $.ajax({
-		// 	url:"http://localhost:8888/grupo-k/carpeta",
-		// 	type:"POST",
-		// 	data:{buscar:variable},
-		// 	success:function(respuesta){
-		// 		//window.document.location = "http://localhost:8888/grupo-k/carpeta";
-		// 	}
-		// });
-		$('#contenedor').load("http://grupok.daniel-iglesias.com.ve/carpeta?var1='"+variable+"'");
-			//window.document.location = "http://localhost:8888/grupo-k/carpeta";
+				$('#contenedor').load("http://grupok.daniel-iglesias.com.ve/carpeta?var1='"+variable+"'");
     });
+		
 	$("body").on("click","#listaPersonaJ a",function(event){
 		event.preventDefault();
 		idsele = $(this).attr("href");

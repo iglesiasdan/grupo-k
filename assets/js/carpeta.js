@@ -1,14 +1,14 @@
 $(document).on("ready",inicio);
 
 function inicio(){
-	var id_enti=$("#id_enti").val();
-	mostrarDatos("",id_enti);
+	var id_entidad=$("#id_entidad").val();
+	mostrarDatos("",id_entidaddad);
 	$("#buscar").keyup(function(){
 		buscar = $("#buscar").val();
-		mostrarDatos(buscar,id_enti);
+		mostrarDatos(buscar,id_entidad);
 	});
 	$("#btnbuscar").click(function(){
-		mostrarDatos("",id_enti);
+		mostrarDatos("",id_entidad);
 		$("#buscar").val("");
 	});
 	$("#btnactualizar").click(actualizar);
@@ -22,8 +22,9 @@ function inicio(){
 			type:$("form").attr("method"),
 			data:$("form").serialize(),
 			success:function(respuesta){
+				alert(data);
 				alert(respuesta);
-				mostrarDatos("",id_enti);
+				mostrarDatos("",id_entidad);
 				$("#nombre").val("");
 				$("#ubicacion").val("");
 			}
@@ -87,7 +88,7 @@ function actualizar(){
 		data:$("#form-actualizar").serialize(),
 		success:function(respuesta){
 			alert(respuesta);
-			mostrarDatos("",id_enti);
+			mostrarDatos("",id_entidad);
 			$("#nombresele").val("");
 			// $("#ubicacionsele").val("");
 		}
@@ -101,7 +102,7 @@ function eliminar(idsele){
 		data:{id:idsele},
 		success:function(respuesta){
 			alert(respuesta);
-			mostrarDatos("",id_enti);
+			mostrarDatos("",id_entidad);
 			$("#nombresele").val("");
 			$("#ubicacionsele").val("");
 		}
