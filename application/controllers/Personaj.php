@@ -98,25 +98,6 @@ class Personaj extends CI_Controller {
 	}
 
 
-	function actualizarr(){
-		if ($this->input->is_ajax_request()) {
-				$idsele = $this->input->post("idsele");
-				$nombres = $this->input->post("nombresele");
-				$datos = array(
-					"nombre_carpeta" => strtoupper($nombres)
-				);
-				if($this->Personaj_model->actualizar_carpeta($idsele,$datos) == true)
-						echo "Registro Actualizado";
-				else
-						echo "No se pudo actualizar los datos";
-		}
-		else
-		{
-				show_404();
-		}
-	}
-
-
 	function eliminar(){
 		if ($this->input->is_ajax_request()) {
 			$idsele = (integer)$_POST['id'];
@@ -131,6 +112,59 @@ class Personaj extends CI_Controller {
 			show_404();
 		}
 	}
+// funciones del controlador correspondientes a la gestion de las carpetas
+function actualizar_carpeta(){
+	if ($this->input->is_ajax_request()) {
+			$idsele = $this->input->post("idsele");
+			$nombres = $this->input->post("nombresele");
+			$datos = array(
+				"nombre_carpeta" => strtoupper($nombres)
+			);
+			if($this->Personaj_model->actualizar_carpeta($idsele,$datos) == true)
+					echo "Registro Actualizado";
+			else
+					echo "No se pudo actualizar los datos";
+	}
+	else
+	{
+			show_404();
+	}
+}
+
+function eliminar_carpeta(){
+	if ($this->input->is_ajax_request()) {
+		$idsele = (integer)$_POST['id'];
+		if($prueba = ($this->Personaj_model->eliminar_carpeta($idsele)) == true)
+			echo "Registro Eliminado";
+		else
+			echo "No se pudo eliminar los datos";
+
+	}
+	else
+	{
+		show_404();
+	}
+}
+
+function guardar_carpeta(){
+	//El metodo is_ajax_request() de la libreria input permite verificar
+	//si se esta accediendo mediante el metodo AJAX
+	if ($this->input->is_ajax_request()) {
+		$nombres = $this->input->post("nombre");
+
+		$datos = array(
+			"nombre_carpeta" => strtoupper($nombres)
+			);
+		if($this->Personaj_model->guardar_carpeta($datos)==true)
+			echo "Registro Guardado";
+		else
+			echo "No se pudo guardar los datos";
+	}
+	else
+	{
+		show_404();
+	}
+}
 
 
 }//fin del controlador

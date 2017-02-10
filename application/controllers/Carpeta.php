@@ -58,7 +58,7 @@ public function mostrar_carpeta(){
 		}
 	}
 
-}//fin del controlador
+
 
 function guardar(){
 	//El metodo is_ajax_request() de la libreria input permite verificar
@@ -78,8 +78,6 @@ function guardar(){
 	{
 		show_404();
 	}
-
-
 }
 
 function actualizar(){
@@ -115,3 +113,5 @@ function eliminar(){
 		show_404();
 	}
 }
+
+}//fin del controlador
