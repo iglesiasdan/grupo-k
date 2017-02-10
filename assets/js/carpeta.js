@@ -60,7 +60,7 @@ function inicio(){
 
 function mostrarDatos(valor,id){
 	$.ajax({
-		url:"http://grupok.daniel-iglesias.com.ve/carpeta/mostrar_carpeta",
+		url:"http://grupok.daniel-iglesias.com.ve/carpeta/mostrar",
 		type:"POST",
 		data:{buscar:valor,id:id},
 		success:function(respuesta){
@@ -82,7 +82,7 @@ function mostrarDatos(valor,id){
 
 function actualizar(){
 	$.ajax({
-		url:"http://grupok.daniel-iglesias.com.ve/personaj/actualizar_carpeta",
+		url:"http://grupok.daniel-iglesias.com.ve/carpeta/actualizar",
 		type:"POST",
 		data:$("#form-actualizar").serialize(),
 		success:function(respuesta){

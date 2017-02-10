@@ -32,7 +32,7 @@ class Carpeta_model extends CI_Model {
 	 */
 
 	function guardar($data){
-		$this->db->insert("",$data);
+		$this->db->insert("Carpeta",$data);
 
 		if ($this->db->affected_rows() > 0) {
 			return true;

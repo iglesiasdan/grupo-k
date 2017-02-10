@@ -75,49 +75,4 @@ class Personaj_model extends CI_Model {
 		}
 	}
 
-// consultas del modelo para las carpetas
-
-function guardar_carpeta($data){
-	$this->db->insert("",$data);
-
-	if ($this->db->affected_rows() > 0) {
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-
-function actualizar_carpeta($id,$data){
-	$this->db->where('id_carpeta', $id);
-	$this->db->update('Carpeta', $data);
-	if ($this->db->affected_rows() > 0) {
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-
-function mostrar_carpeta($valor,$id){
-		$this->db->select('*');
-		$this->db->from('Carpeta a');
-		$this->db->join('Entidad b','b.id_entidad=a.id_entidad','left');
-		$this->db->where('b.id_entidad',$id);
-		$this->db->like("nombre_carpeta",$valor);
-		$consulta = $this->db->get();
-		return $consulta->result();
-	}
-
-	function eliminar_carpeta($id){
-		$this->db->where('id_carpeta', $id);
-		$this->db->delete('Carpeta');
-		if ($this->db->affected_rows() > 0) {
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
-
 }//fin del modelo
