@@ -105,7 +105,7 @@ class Personaj extends CI_Controller {
 				$datos = array(
 					"nombre_carpeta" => strtoupper($nombres)
 				);
-				if($this->Carpeta_model->actualizar($idsele,$datos) == true)
+				if($this->Personaj_model->actualizar_carpeta($idsele,$datos) == true)
 						echo "Registro Actualizado";
 				else
 						echo "No se pudo actualizar los datos";

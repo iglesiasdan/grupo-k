@@ -82,7 +82,7 @@ function mostrarDatos(valor,id){
 
 function actualizar(){
 	$.ajax({
-		url:"http://grupok.daniel-iglesias.com.ve/personaj/actualizarr",
+		url:"http://grupok.daniel-iglesias.com.ve/carpeta/actualizar",
 		type:"POST",
 		data:$("#form-actualizar").serialize(),
 		success:function(respuesta){
